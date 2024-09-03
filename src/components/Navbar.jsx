@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { FaDiscord, FaXTwitter } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaXTwitter } from "react-icons/fa6";
 
 const menuLinks = [
 	{ path: "#", label: "Home" },
-	{ path: "https://app.gib.work/", label: "App" },
-	{ path: "#pricing", label: "Pricing" },
+	{ path: "#team", label: "Team" },
 	{ path: "#testimonials", label: "Testimonials" },
+	{ path: "#FAQ", label: "FAQ" },
 	{ path: "https://app.gib.work/", label: "Sign In" },
 ];
 
@@ -52,17 +52,18 @@ const Navbar = () => {
 	}, [isMenuOpen]);
 
 	useEffect(() => {
-		const listenScroll = () => window.addEventListener("scroll", () => {
-			if (window.scrollY > 25) {
-				navbar.classList.add("navbar-scrolled");
-			} else if (window.scrollY < 25) {
-				navbar.classList.remove("navbar-scrolled");
-			}
-		});
+		const listenScroll = () =>
+			window.addEventListener("scroll", () => {
+				if (window.scrollY > 25) {
+					navbar.classList.add("navbar-scrolled");
+				} else if (window.scrollY < 25) {
+					navbar.classList.remove("navbar-scrolled");
+				}
+			});
 
 		const navbar = document.querySelector(".menu-container");
 		const menuOverlay = document.querySelector(".menu-overlay");
-		listenScroll()
+		listenScroll();
 
 		return () => {
 			window.removeEventListener("scroll", listenScroll);
@@ -95,8 +96,29 @@ const Navbar = () => {
 							)}
 						</div>
 						<div className="hidden md:flex justify-center items-center gap-2">
-							<a href="https://x.com/gib_work" target="_blank" rel="noopener noreferrer"><FaXTwitter color="black" size={18} /></a>
-							<a href="https://discord.com/invite/U3kEda4b" className="ml-2" target="_blank" rel="noopener noreferrer"><FaDiscord color="black" size={22} /></a>
+							<a
+								href="https://github.com/gibwork"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FaGithub color="black" size={18} />
+							</a>
+							<a
+								href="https://x.com/gib_work"
+								target="_blank"
+								className="ml-2"
+								rel="noopener noreferrer"
+							>
+								<FaXTwitter color="black" size={18} />
+							</a>
+							<a
+								href="https://discord.com/invite/U3kEda4b"
+								className="ml-2"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<FaDiscord color="black" size={22} />
+							</a>
 							<Navlink path={menuLinks[menuLinks.length - 1].path}>
 								{menuLinks[menuLinks.length - 1].label}
 							</Navlink>
@@ -107,7 +129,7 @@ const Navbar = () => {
 					</div>
 				</div>
 
-				<div className="menu-overlay">
+				<div className="menu-overlay font-neue">
 					<div className="menu-overlay-bar">
 						<div className="menu-logo">
 							<div className="flex justify-center items-center gap-2">
@@ -136,8 +158,27 @@ const Navbar = () => {
 						</div>
 						<div className="menu-info">
 							<div className="menu-info-col">
-								<a href="https://x.com/gib_work" target="_blank" rel="noopener noreferrer">Twitter &#8599;</a>
-								<a href="https://discord.com/invite/U3kEda4b" target="_blank" rel="noopener noreferrer">Discord &#8599;</a>
+								<a
+									href="https://github.com/gibwork"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									GitHub &#8599;
+								</a>
+								<a
+									href="https://x.com/gib_work"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Twitter &#8599;
+								</a>
+								<a
+									href="https://discord.com/invite/U3kEda4b"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Discord &#8599;
+								</a>
 								<p>info@gibwork.com</p>
 								<p>+12 3456 89010</p>
 							</div>

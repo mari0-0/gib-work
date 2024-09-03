@@ -6,13 +6,13 @@ const Hero = () => {
 
 
 	return (
-		<div className="mb-20 bg-hero lg:pb-0 pb-120 ">
-			<div className="pt-36 w-full h-fit pointer-events-none">
-				<div className="max-w-[650px] relative mx-auto flex flex-col  justify-center items-center">
+		<div className="mb-20 bg-hero lg:pb-0 pb-120">
+			<div className="pt-36 w-full h-fit pointer-events-none ">
+				<div className="max-w-[650px] relative mx-auto flex flex-col justify-center items-center">
 					<h1 className="text-4xl sm:text-6xl text-slate-900 font-semibold font-neue text-center">
 						Power Up with Bounties @ Gibwork
 					</h1>
-					<p className="mt-2 text-gray-500 text-center">
+					<p className="mt-2 text-gray-500 text-center min-w-sm">
 						Post and solve bounties in a decentralized network—Connect globally
 						and earn rewards in a secure, transparent space.
 					</p>
@@ -24,7 +24,7 @@ const Hero = () => {
 
 				</div>
 
-				<div className="video-wrapper h-fit relative mt-12 w-full flex flex-col justify-center items-center">
+				<div className="video-wrapper h-fit relative z-[1] mt-12 w-full flex flex-col justify-center items-center">
 					<div className="absolute top-0 z-[1] rounded-3xl w-[88%] md:w-[70%] h-10 bg-slate-400 border"></div>
 					<div className="absolute top-0 z-[1] translate-y-3 rounded-3xl w-[93%] md:w-[75%] h-10 bg-slate-300 border border-slate-400"></div>
 					<div className="p-2 top-0 z-[2] translate-y-6 rounded-3xl w-[98%] md:w-[80%] bg-slate-200 border border-slate-400 pointer-events-all">
