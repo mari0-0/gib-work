@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { FaDiscord, FaXTwitter } from "react-icons/fa6";
 
 const menuLinks = [
 	{ path: "#", label: "Home" },
@@ -14,7 +15,6 @@ const menuLinks = [
 const Navbar = () => {
 	const container = useRef();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
 	const tl = useRef();
 
 	const toggleMenu = () => {
@@ -62,7 +62,7 @@ const Navbar = () => {
 
 		const navbar = document.querySelector(".menu-container");
 		const menuOverlay = document.querySelector(".menu-overlay");
-    listenScroll()
+		listenScroll()
 
 		return () => {
 			window.removeEventListener("scroll", listenScroll);
@@ -94,7 +94,9 @@ const Navbar = () => {
 								) : undefined
 							)}
 						</div>
-						<div className="hidden md:block">
+						<div className="hidden md:flex justify-center items-center gap-2">
+							<a href="https://x.com/gib_work" target="_blank" rel="noopener noreferrer"><FaXTwitter color="black" size={18} /></a>
+							<a href="https://discord.com/invite/U3kEda4b" className="ml-2" target="_blank" rel="noopener noreferrer"><FaDiscord color="black" size={22} /></a>
 							<Navlink path={menuLinks[menuLinks.length - 1].path}>
 								{menuLinks[menuLinks.length - 1].label}
 							</Navlink>
@@ -134,8 +136,8 @@ const Navbar = () => {
 						</div>
 						<div className="menu-info">
 							<div className="menu-info-col">
-								<a href="https://x.com/gib_work">Twitter &#8599;</a>
-								<a href="#">Discord &#8599;</a>
+								<a href="https://x.com/gib_work" target="_blank" rel="noopener noreferrer">Twitter &#8599;</a>
+								<a href="https://discord.com/invite/U3kEda4b" target="_blank" rel="noopener noreferrer">Discord &#8599;</a>
 								<p>info@gibwork.com</p>
 								<p>+12 3456 89010</p>
 							</div>

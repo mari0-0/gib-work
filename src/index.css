@@ -15,3 +15,17 @@
 	background: linear-gradient(to bottom, #d8ecfb 0%, #f3f2f8 50%, #fbfbfc 100%);
 }
 
+@layer utilities {
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+}
