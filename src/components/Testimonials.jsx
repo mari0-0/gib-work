@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import BlurFade from "./BlurFade";
 
 gsap.registerPlugin(ScrollTrigger);
 const Testimonials = () => {
@@ -44,60 +45,65 @@ const Testimonials = () => {
 
 	return (
 		<div className="bg-[#fbfbfc] relative pt-8 h-screen w-full flex flex-col items-center border-t border-slate-200 overflow-hidden">
-			<div className="px-3 py-1 mb-5 w-fit flex justify-center items-center gap-2 rounded-full bg-slate-100">
-				<AiOutlineMessage size={18} />
-				Testimonials
-			</div>
 
-			<h1 className="mb-3 font-bold font-neue text-3xl sm:text-5xl text-slate-900  text-center">
-				Hear from Our Happy Clients
-			</h1>
-			<p className="text-gray-500 mb-14 text-center max-w-sm">
-				Discover how we've made a difference for those who matter most.
-			</p>
-
-			<div className="overlay-container w-[80%] h-screen md:w-[125%] flex gap-2 md:-skew-x-12 overflow-hidden">
-        <div className="absolute "></div>
-
-				<div className="row2 h-screen w-1/3 lg:flex flex-col gap-2 hidden -translate-y-64">
-					{tweetsData.map((tweet, index) =>
-						index < 10 && 5 <= index ? (
-							<Testimonial key={index} {...tweet} />
-						) : null
-					)}
+			<BlurFade yOffset={10} duration={0.3} className="flex flex-col items-center">
+				<div className="px-3 py-1 mb-5 w-fit flex justify-center items-center gap-2 rounded-full bg-slate-100">
+					<AiOutlineMessage size={18} />
+					Testimonials
 				</div>
 
-				<div
-					ref={row1}
-					className="h-screen w-full sm:w-1/2 md:w-1/3 flex flex-col gap-2 -translate-y-[50px]"
-				>
-					{tweetsData.map((tweet, index) =>
-						index < 5 ? (
-							<Testimonial key={index} {...tweet} theme={"dark"} />
-						) : null
-					)}
-				</div>
+				<h1 className="mb-3 font-bold font-neue text-3xl sm:text-5xl text-slate-900  text-center">
+					Hear from Our Happy Clients
+				</h1>
+				<p className="text-gray-500 mb-14 text-center max-w-sm">
+					Discover how we've made a difference for those who matter most.
+				</p>
+			</BlurFade>
+			<BlurFade yOffset={10} duration={0.4} className="overlay-container w-[80%] h-screen md:w-[125%] flex gap-2 md:-skew-x-12 overflow-hidden">
+				<div className="flex gap-2 md:-skew-x-12 overflow-hidden">
+					<div className="absolute "></div>
 
-				<div className="row2 h-screen w-1/2 md:w-1/3 sm:flex flex-col gap-2 hidden -translate-y-64">
-					{tweetsData.map((tweet, index) =>
-						index < 10 && 5 <= index ? (
-							<Testimonial key={index} {...tweet} />
-						) : null
-					)}
-				</div>
+					<div className="row2 h-screen w-1/3 lg:flex flex-col gap-2 hidden -translate-y-64">
+						{tweetsData.map((tweet, index) =>
+							index < 10 && 5 <= index ? (
+								<Testimonial key={index} {...tweet} />
+							) : null
+						)}
+					</div>
 
-				<div
-					ref={row3}
-					className="h-screen w-1/3 md:flex flex-col gap-2 hidden translate-y-[-300px]"
-				>
-					{tweetsData.map((tweet, index) =>
-						index < 15 && 10 <= index ? (
-							<Testimonial key={index} {...tweet} theme={"dark"} />
-						) : null
-					)}
+					<div
+						ref={row1}
+						className="h-screen w-full sm:w-1/2 md:w-1/3 flex flex-col gap-2 -translate-y-[50px]"
+					>
+						{tweetsData.map((tweet, index) =>
+							index < 5 ? (
+								<Testimonial key={index} {...tweet} theme={"dark"} />
+							) : null
+						)}
+					</div>
+
+					<div className="row2 h-screen w-1/2 md:w-1/3 sm:flex flex-col gap-2 hidden -translate-y-64">
+						{tweetsData.map((tweet, index) =>
+							index < 10 && 5 <= index ? (
+								<Testimonial key={index} {...tweet} />
+							) : null
+						)}
+					</div>
+
+					<div
+						ref={row3}
+						className="h-screen w-1/3 md:flex flex-col gap-2 hidden translate-y-[-300px]"
+					>
+						{tweetsData.map((tweet, index) =>
+							index < 15 && 10 <= index ? (
+								<Testimonial key={index} {...tweet} theme={"dark"} />
+							) : null
+						)}
+					</div>
 				</div>
-			</div>
-		</div>
+			</BlurFade>
+
+		</div >
 	);
 };
 
@@ -116,10 +122,9 @@ export const Testimonial = ({
 			<TweetCard
 				theme={theme ? theme : "dim"}
 				author={{
-					name: "randy",
-					username: "randyfactory",
+					...author,
 					image:
-						"https://pbs.twimg.com/profile_images/1382083582752096262/xrx0PO8Z_400x400.jpg",
+						"/twitter-profile-pic.png"
 				}}
 				tweet={tweet}
 				time={time}
