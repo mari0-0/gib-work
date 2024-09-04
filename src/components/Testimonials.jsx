@@ -44,22 +44,31 @@ const Testimonials = () => {
 	}, []);
 
 	return (
-		<div className="bg-[#fbfbfc] relative pt-8 h-screen w-full flex flex-col items-center border-t border-slate-200 overflow-hidden">
+		<div className="bg-[#fbfbfc] relative h-screen w-full flex flex-col items-center border-b border-slate-200 overflow-hidden">
+			<div className="w-[80%] pt-16 border-x border-gray-200">
+				<BlurFade
+					yOffset={10}
+					duration={0.3}
+					className="flex flex-col items-center"
+				>
+					<div className="px-3 py-1 mb-5 w-fit flex justify-center items-center gap-2 rounded-full bg-slate-100">
+						<AiOutlineMessage size={18} />
+						Testimonials
+					</div>
 
-			<BlurFade yOffset={10} duration={0.3} className="flex flex-col items-center">
-				<div className="px-3 py-1 mb-5 w-fit flex justify-center items-center gap-2 rounded-full bg-slate-100">
-					<AiOutlineMessage size={18} />
-					Testimonials
-				</div>
-
-				<h1 className="mb-3 font-bold font-neue text-3xl sm:text-5xl text-slate-900  text-center">
-					Hear from Our Happy Clients
-				</h1>
-				<p className="text-gray-500 mb-14 text-center max-w-sm">
-					Discover how we've made a difference for those who matter most.
-				</p>
-			</BlurFade>
-			<BlurFade yOffset={10} duration={0.4} className="overlay-container w-[80%] h-screen md:w-[125%] flex gap-2 md:-skew-x-12 overflow-hidden">
+					<h1 className="mb-3 font-medium font-neue text-3xl sm:text-5xl text-slate-900  text-center">
+						Hear from Our <span className="font-semibold text-violet-600">Happy</span> Clients
+					</h1>
+					<p className="text-gray-500 mb-16 text-center max-w-sm">
+						Discover how we've made a difference for those who matter most.
+					</p>
+				</BlurFade>
+			</div>
+			<BlurFade
+				yOffset={10}
+				duration={0.4}
+				className="overlay-container w-[80%] h-screen md:w-[80%] flex gap-2 md:-skew-x-12 overflow-hidden border-x border-t border-gray-200"
+			>
 				<div className="flex gap-2 md:-skew-x-12 overflow-hidden">
 					<div className="absolute "></div>
 
@@ -102,8 +111,7 @@ const Testimonials = () => {
 					</div>
 				</div>
 			</BlurFade>
-
-		</div >
+		</div>
 	);
 };
 
@@ -123,8 +131,7 @@ export const Testimonial = ({
 				theme={theme ? theme : "dim"}
 				author={{
 					...author,
-					image:
-						"/twitter-profile-pic.png"
+					image: "/twitter-profile-pic.png",
 				}}
 				tweet={tweet}
 				time={time}

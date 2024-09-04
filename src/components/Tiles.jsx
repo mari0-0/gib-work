@@ -16,7 +16,7 @@ const Tiles = () => {
 
     }, []);
     return (
-        <div className="grid-wrapper absolute top-0 left-0">
+        <div className="grid-wrapper absolute top-0 left-0 border-b border-gray-200">
             <div className="grid-container"></div>
         </div>
     )

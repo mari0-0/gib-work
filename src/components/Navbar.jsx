@@ -6,8 +6,9 @@ import { FaDiscord, FaGithub, FaXTwitter } from "react-icons/fa6";
 
 const menuLinks = [
 	{ path: "#", label: "Home" },
-	{ path: "#team", label: "Team" },
+	{ path: "#features", label: "Features" },
 	{ path: "#testimonials", label: "Testimonials" },
+	{ path: "#team", label: "Team" },
 	{ path: "#FAQ", label: "FAQ" },
 	{ path: "https://app.gib.work/", label: "Sign In" },
 ];
