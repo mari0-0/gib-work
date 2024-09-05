@@ -1,0 +1,46 @@
+.workTokenLogoContainer {
+	height: 205px;
+	width: 205px;
+	background: url('http://s2.music.126.net/style/web2/img/coverall.png?e8cb94d884e56897e524dec54b947d6e') no-repeat;
+	background-position: -140px -580px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scale: 0.75;
+  transform: translateX(-20%);
+	> img {
+		margin: 38px;
+		width: 130px;
+		height: 130px;
+		border-radius: 130px;
+		animation: rotate-animation 10s infinite linear;
+	}
+}
+@keyframes rotate-animation {
+	0% {
+		transform: rotate(0deg);
+  }
+  50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+#faq-trailer{
+  padding: .75rem 1rem;
+  border-radius: 60px;
+  position: fixed;
+
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: 80;
+  pointer-events: none;
+  transition: opacity 500ms ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

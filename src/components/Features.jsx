@@ -17,7 +17,7 @@ const Features = () => {
 				<div className="py-8 w-[80%] mx-auto flex md:flex-row flex-col justify-between border border-y-0 border-gray-200">
 					<div className="flex justify-center items-end pl-4">
 						<h1 className="text-gray-900 font-neue font-medium text-5xl">
-							What is{" "}
+							What is<br/>
 							<span className="text-violet-500 font-semibold">
 								<em>Gibwork</em>
 							</span>{" "}
