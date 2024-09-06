@@ -22,15 +22,13 @@ const metadata = {
 // Create solanaConfig
 const solanaConfig = defaultSolanaConfig({
   metadata,
-  chains,
   projectId,
 	auth: {
     email: false, // default to true
     socials: [],
     showWallets: true, // default to true
     walletFeatures: true // default to true
-    
-  }
+  },
 })
 
 // Create modal
@@ -41,7 +39,8 @@ createWeb3Modal({
 	themeVariables: {
 		'--w3m-border-radius-master': '0.1rem',
 		'--w3m-accent': '#8151fd',
-	}
+	},
+	allowUnsupportedChain: true,
 })
 
 createRoot(document.getElementById("root")).render(
