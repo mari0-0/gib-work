@@ -84,59 +84,65 @@ const FAQ = () => {
 	}, []);
 
 	return (
-		<section className="mt-12 px-[10%] border-b border-gray-200">
-			<div id="faq-trailer" className="text-white gap-2 bg-gray-950">
-				{isPlaying ? (
-					<>
-						<FaPause /> Pause
-					</>
-				) : (
-					<>
-						<FaPlay /> Play
-					</>
-				)}
+		<>
+			<div className="w-full h-[10vh] border-b border-gray-200 ">
+				<div className="w-[80%] h-full mx-[10%] border-x border-gray-200"></div>
 			</div>
 
-			<div className="w-full flex flex-col md:flex-row border-x border-gray-200">
-				<div className="mt-[2px] w-full h-full">
-					<div className="p-4">
-						<h2 className="font-neue font-medium text-4xl md:text-5xl text-gray-900">
-							Got &nbsp;
-							<em className="font-semibold text-violet-600">Questions?</em>
-							<br />
-							We’ve Got &nbsp;
-							<em className="text-violet-600 font-semibold">Answers!</em>
-						</h2>
+			<section className=" px-[10%] border-b border-gray-200">
+				<div id="faq-trailer" className="text-white gap-2 bg-gray-950">
+					{isPlaying ? (
+						<>
+							<FaPause /> Pause
+						</>
+					) : (
+						<>
+							<FaPlay /> Play
+						</>
+					)}
+				</div>
 
-						<div className="mt-3 font-semibold text-gray-700 flex items-center gap-2 cursor-pointer">
-							<IoChatbubblesOutline />
-							<p>Still need help? chat to us.</p>
-						</div>
+				<div className="w-full flex flex-col md:flex-row border-x border-gray-200">
+					<div className="mt-[2px] w-full h-full">
+						<div className="p-4">
+							<h2 className="font-neue font-medium text-4xl md:text-5xl text-gray-900">
+								Got &nbsp;
+								<em className="font-semibold text-violet-600">Questions?</em>
+								<br />
+								We’ve Got &nbsp;
+								<em className="text-violet-600 font-semibold">Answers!</em>
+							</h2>
 
-						<div className="pt-8 hidden md:flex items-center">
-							<div
-								class="workTokenLogoContainer"
-								onClick={handleMusicPlayerClick}
-							>
-								<img src="/gibWork2.jpg" alt="img" draggable={false}/>
-								<audio id="musicPlayer" src="/music.mp3" loop></audio>
+							<div className="mt-3 font-semibold text-gray-700 flex items-center gap-2 cursor-pointer">
+								<IoChatbubblesOutline />
+								<p>Still need help? chat to us.</p>
 							</div>
 
-							<div className="musicText text-xs md:text-sm max-w-[30%] md:max-w-full text-gray-500 flex items-center gap-2 duration-300">
-								<FaLongArrowAltLeft />
-								<p>Want to hear music?</p>
+							<div className="pt-8 hidden md:flex items-center">
+								<div
+									class="workTokenLogoContainer"
+									onClick={handleMusicPlayerClick}
+								>
+									<img src="/gibWork2.jpg" alt="img" draggable={false} />
+									<audio id="musicPlayer" src="/music.mp3" loop></audio>
+								</div>
+
+								<div className="musicText text-xs md:text-sm max-w-[30%] md:max-w-full text-gray-500 flex items-center gap-2 duration-300">
+									<FaLongArrowAltLeft />
+									<p>Want to hear music?</p>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div className="w-full h-full border-l border-gray-200">
-					<div className="p-4">
-						<FAQAccordion />
+					<div className="w-full h-full border-l border-gray-200">
+						<div className="p-4">
+							<FAQAccordion />
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</>
 	);
 };
 

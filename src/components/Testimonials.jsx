@@ -11,12 +11,12 @@ import Marquee from "react-fast-marquee";
 
 
 const brands = [
-	{ name: "solana", image: "/solana.png" , bgGray: false},
+	{ name: "solana", image: "/solana.png", bgGray: false },
 	{ name: "dexscreener", image: "/dexscreener.png", bgGray: false },
 	{ name: "sol_civ", image: "/sol_civ.png", bgGray: true },
-	{ name: "raydium", image: "/Raydium.png" , bgGray: false},
-	{ name: "birdeye", image: "/birdeye.png" , bgGray: false},
-	
+	{ name: "raydium", image: "/Raydium.png", bgGray: false },
+	{ name: "birdeye", image: "/birdeye.png", bgGray: false },
+
 ];
 
 gsap.registerPlugin(ScrollTrigger);
@@ -56,6 +56,7 @@ const Testimonials = () => {
 
 	return (
 		<>
+
 			<div className="border-b border-gray-200">
 				<div className="px-[10%] w-full h-[30vh] flex flex-col md:flex-row">
 					<div className="w-2/5 h-full px-4 flex items-center border-l border-gray-200">
@@ -96,6 +97,11 @@ const Testimonials = () => {
 					</div>
 				</div>
 			</div>
+
+			<div className="w-full h-[10vh] border-b border-gray-200 ">
+				<div className="w-[80%] h-full mx-[10%] border-x border-gray-200"></div>
+			</div>
+			
 			<div className="bg-[#fbfbfc] relative h-screen w-full flex flex-col items-center border-b border-slate-200 overflow-hidden">
 				<div className="w-[80%] pt-16 border-x border-gray-200">
 					<BlurFade
