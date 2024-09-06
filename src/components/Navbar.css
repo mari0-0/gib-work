@@ -21,7 +21,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 3.4em 2em 1em 2em;
+  padding: 3.4em 10% 1em 10%;
   display: flex;
   justify-content: space-between;
   align-self: center;
@@ -47,7 +47,7 @@
 
 .menu-bar{
   align-items: center;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   transition: all 0.5s;
 }
 

@@ -97,29 +97,6 @@ const Navbar = () => {
 							)}
 						</div>
 						<div className="hidden md:flex justify-center items-center gap-2">
-							<a
-								href="https://github.com/gibwork"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<FaGithub color="black" size={18} />
-							</a>
-							<a
-								href="https://x.com/gib_work"
-								target="_blank"
-								className="ml-2"
-								rel="noopener noreferrer"
-							>
-								<FaXTwitter color="black" size={18} />
-							</a>
-							<a
-								href="https://discord.com/invite/U3kEda4b"
-								className="ml-2"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<FaDiscord color="black" size={22} />
-							</a>
 							<Navlink path={menuLinks[menuLinks.length - 1].path}>
 								{menuLinks[menuLinks.length - 1].label}
 							</Navlink>

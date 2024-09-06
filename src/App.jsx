@@ -6,6 +6,7 @@ import Testimonials from "./components/Testimonials";
 import Team from "./components/Team";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
+import Newsletter from "./components/Newsletter";
 
 // #8151fd
 export default function MyApp() {
@@ -18,10 +19,11 @@ export default function MyApp() {
 			<Testimonials />
 			<Team />
 			<FAQ />
-			<div className="mt-[80rem]">Test</div>
+			{/* <div className="mt-[80rem]">{" "}</div> */}
+			<Newsletter />
 			<Footer />
-			{/* // News letter | https://www.niceverynice.com/components/cta-block-with-footer-navigation-menu
-			// Footer */}
+			{/* News letter | https://www.niceverynice.com/components/cta-block-with-footer-navigation-menu
+			 Footer */}
 		</div>
 	);
 }
