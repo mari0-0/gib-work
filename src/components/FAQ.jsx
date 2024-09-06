@@ -103,7 +103,12 @@ const FAQ = () => {
 				</div>
 
 				<div className="w-full flex flex-col md:flex-row border-x border-gray-200">
-					<div className="mt-[2px] w-full h-full">
+					<BlurFade
+						yOffset={10}
+						duration={0.6}
+						delay={0.1}
+						className="mt-[2px] w-full h-full"
+					>
 						<div className="p-4">
 							<h2 className="font-neue font-medium text-4xl md:text-5xl text-gray-900">
 								Got &nbsp;
@@ -133,13 +138,18 @@ const FAQ = () => {
 								</div>
 							</div>
 						</div>
-					</div>
+					</BlurFade>
 
-					<div className="w-full h-full border-l border-gray-200">
+					<BlurFade
+						yOffset={10}
+						duration={0.6}
+						delay={0.1}
+						className="w-full h-full md:border-l border-gray-200"
+					>
 						<div className="p-4">
 							<FAQAccordion />
 						</div>
-					</div>
+					</BlurFade>
 				</div>
 			</section>
 		</>
@@ -157,6 +167,7 @@ import {
 } from "@chakra-ui/react";
 import { faqs } from "../placeholders";
 import { FaPause, FaPlay } from "react-icons/fa6";
+import BlurFade from "./BlurFade";
 
 export const FAQAccordion = () => {
 	return (

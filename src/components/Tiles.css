@@ -1,8 +1,10 @@
 :root {
-  --red-rgb: 248 113 113;
-  --blue-rgb: 56 189 248;
-  --green-rgb: 74 222 128;
-  --yellow-rgb: 253 224 71;
+  --violet-100: #c084fc;
+  --violet-200: #8b60d5;
+  --violet-300: #7627bb;
+  --violet-400: #4c1d95;
+
+
   --background-rgb: 0 0 0;
 }
 
@@ -29,49 +31,49 @@
 }
 
 .tile:nth-child(4n):hover {
-  background-color: rgb(var(--red-rgb));
+  background-color: var(--violet-100);
 }
 
 .tile:nth-child(4n + 1):hover {
-  background-color: rgb(var(--blue-rgb));
+  background-color: var(--violet-200);
 }
 
 .tile:nth-child(4n + 2):hover {
-  background-color: rgb(var(--green-rgb));
+  background-color: var(--violet-300);
 }
 
 .tile:nth-child(4n + 3):hover {
-  background-color: rgb(var(--yellow-rgb));
+  background-color: var(--violet-400);
 }
 
 .tile:nth-child(7n):hover {
-  background-color: rgb(var(--blue-rgb));
+  background-color: var(--violet-200);
 }
 
 .tile:nth-child(7n + 3):hover {
-  background-color: rgb(var(--green-rgb));
+  background-color: var(--violet-300);
 }
 
 .tile:nth-child(7n + 5):hover {
-  background-color: rgb(var(--yellow-rgb));
+  background-color: var(--violet-400);
 }
 
 .tile:nth-child(7n + 6):hover {
-  background-color: rgb(var(--red-rgb));
+  background-color: var(--violet-100);
 }
 
 .tile:nth-child(11n + 1):hover {
-  background-color: rgb(var(--red-rgb));
+  background-color: var(--violet-100);
 }
 
 .tile:nth-child(11n + 4):hover {
-  background-color: rgb(var(--blue-rgb));
+  background-color: var(--violet-200);
 }
 
 .tile:nth-child(11n + 7):hover {
-  background-color: rgb(var(--green-rgb));
+  background-color: var(--violet-300);
 }
 
 .tile:nth-child(11n + 10):hover {
-  background-color: rgb(var(--yellow-rgb));
+  background-color: var(--violet-400);
 }

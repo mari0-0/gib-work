@@ -10,9 +10,9 @@ const Hero = () => {
 		<div className="mb-20 bg-hero lg:pb-0 pb-120">
 			<div className="pt-36 w-full h-fit pointer-events-none ">
 				<div className="max-w-[650px] relative mx-auto flex flex-col justify-center items-center">
-					<BlurFade yOffset={10} duration={0.6} delay={0.2}>
-						<h1 className="text-4xl sm:text-6xl text-slate-900 font-semibold font-neue text-center">
-							Power Up with Bounties @ Gibwork
+					<BlurFade yOffset={10} duration={0.6} delay={0.2} className='px-[5%]'>
+						<h1 className="text-4xl sm:text-6xl text-slate-900 font-semibold !font-neue text-center">
+							Power Up with Bounties <span className="text-violet-700 font-neue">@ Gibwork</span>
 						</h1>
 						<p className="mt-2 text-gray-500 text-center min-w-sm">
 							Post and solve bounties in a decentralized network—Connect globally

@@ -1,7 +1,7 @@
 .menu-container a, .menu-container p{
   color: #000;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 14px;
   font-weight: 500;
   line-height: 100%;

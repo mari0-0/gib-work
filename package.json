@@ -12,6 +12,7 @@
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@gsap/react": "^2.1.1",
+    "@web3modal/solana": "^5.1.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.31",

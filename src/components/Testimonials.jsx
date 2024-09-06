@@ -9,14 +9,12 @@ import { ScrollTrigger } from "gsap/all";
 import BlurFade from "./BlurFade";
 import Marquee from "react-fast-marquee";
 
-
 const brands = [
 	{ name: "solana", image: "/solana.png", bgGray: false },
 	{ name: "dexscreener", image: "/dexscreener.png", bgGray: false },
 	{ name: "sol_civ", image: "/sol_civ.png", bgGray: true },
 	{ name: "raydium", image: "/Raydium.png", bgGray: false },
 	{ name: "birdeye", image: "/birdeye.png", bgGray: false },
-
 ];
 
 gsap.registerPlugin(ScrollTrigger);
@@ -56,52 +54,59 @@ const Testimonials = () => {
 
 	return (
 		<>
-
 			<div className="border-b border-gray-200">
-				<div className="px-[10%] w-full h-[30vh] flex flex-col md:flex-row">
-					<div className="w-2/5 h-full px-4 flex items-center border-l border-gray-200">
-						<h2 className="font-neue font-medium text-3xl md:text-5xl text-gray-900">
-							Trusted by
-							<br />
-							<em className="text-violet-600 font-semibold">Leading</em> Brands
-						</h2>
-					</div>
+				<BlurFade yOffset={10} duration={0.6} delay={0.1}>
+					<div className="px-[10%] w-full h-[30vh] flex flex-col md:flex-row">
+						<div className="w-full md:w-2/5 h-full pt-4 px-4 flex items-center border-x md:border-r-0 border-gray-200">
+							<h2 className="font-neue font-medium text-3xl md:text-5xl text-gray-900">
+								Trusted by
+								<br />
+								<em className="text-violet-600 font-semibold">Leading</em>{" "}
+								Brands
+							</h2>
+						</div>
 
-					<div className="w-3/5 px-4 flex items-center text-gray-500 border-r border-gray-200">
-						<p className="my-auto">
-							Over the years, we’ve earned the trust of some of the world’s most
-							respected brands. They rely on our commitment to excellence and
-							ability to deliver cutting-edge solutions tailored to their needs.
-							Our partnerships are built on mutual respect, innovation, and a
-							shared vision for growth in a constantly evolving marketplace.
-						</p>
+						<div className="w-full md:w-3/5 pt-4 px-4 flex items-center text-gray-500 border-x md:border-l-0 border-gray-200">
+							<p className="my-auto text-sm md:text-md">
+								Over the years, we’ve earned the trust of some of the world’s
+								most respected brands. They rely on our commitment to excellence
+								and ability to deliver cutting-edge solutions tailored to their
+								needs. Our partnerships are built on mutual respect, innovation,
+								and a shared vision for growth in a constantly evolving
+								marketplace.
+							</p>
+						</div>
 					</div>
-				</div>
+				</BlurFade>
 
-				<div className="w-full h-[30vh]	">
-					<div className="mx-[10%] p-4 w-[80%] h-full flex items-center gap-4 border-x border-gray-200">
-						<Marquee className="overflow-hidden">
-							{brands.map((brand, i) => (
-								<div
-									key={i}
-									className={`h-[4.5rem] w-52 mx-4 ${brand.bgGray && 'bg-slate-200'} grayscale flex items-center`}
-								>
-									<img
-										src={brand.image}
-										alt={brand.name}
-										className="object-cover w-full"
-									/>
-								</div>
-							))}
-						</Marquee>
+				<BlurFade yOffset={10} duration={0.3} delay={0.1}>
+					<div className="w-full h-[30vh] sm:mt-0">
+						<div className="mx-[10%] p-4 w-[80%] h-full flex items-center gap-4 border-x border-gray-200">
+							<Marquee className="overflow-hidden">
+								{brands.map((brand, i) => (
+									<div
+										key={i}
+										className={`w-36 h-12 sm:h-[4.5rem] sm:w-52 mx-4 ${
+											brand.bgGray && "bg-slate-200"
+										} grayscale flex items-center`}
+									>
+										<img
+											src={brand.image}
+											alt={brand.name}
+											className="object-cover w-full"
+										/>
+									</div>
+								))}
+							</Marquee>
+						</div>
 					</div>
-				</div>
+				</BlurFade>
 			</div>
 
 			<div className="w-full h-[10vh] border-b border-gray-200 ">
 				<div className="w-[80%] h-full mx-[10%] border-x border-gray-200"></div>
 			</div>
-			
+
 			<div className="bg-[#fbfbfc] relative h-screen w-full flex flex-col items-center border-b border-slate-200 overflow-hidden">
 				<div className="w-[80%] pt-16 border-x border-gray-200">
 					<BlurFade
@@ -127,9 +132,9 @@ const Testimonials = () => {
 				<BlurFade
 					yOffset={10}
 					duration={0.4}
-					className="overlay-container w-[80%] h-screen md:w-[80%] flex gap-2 md:-skew-x-12 overflow-hidden border-x border-t border-gray-200"
+					className="overlay-container w-[80%] h-screen md:w-[80%] flex gap-2 overflow-hidden border-x border-t border-gray-200"
 				>
-					<div className="flex gap-2 md:-skew-x-12 overflow-hidden">
+					<div className="flex gap-2 overflow-hidden">
 						<div className="absolute "></div>
 
 						<div className="row2 h-screen w-1/3 lg:flex flex-col gap-2 hidden -translate-y-64">

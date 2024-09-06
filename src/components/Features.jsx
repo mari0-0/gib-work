@@ -12,34 +12,37 @@ const Features = () => {
 	useGSAP(() => {}, []);
 
 	return (
-		<section className="mt-36 border-t border-gray-200">
+		<section className="relative z-10 bg-white mt-36 border-t border-gray-200">
 			<div className="border-b border-gray-200">
-				<div className="py-8 w-[80%] mx-auto flex md:flex-row flex-col justify-between border border-y-0 border-gray-200">
-					<div className="flex justify-center items-end pl-4">
-						<h1 className="text-gray-900 font-neue font-medium text-5xl">
-							What is<br/>
-							<span className="text-violet-500 font-semibold">
-								<em>Gibwork</em>
-							</span>{" "}
-							?
-						</h1>
+				<BlurFade yOffset={10} duration={0.6} delay={0.2}>
+					<div className="py-8 w-[80%] mx-auto flex md:flex-row flex-col justify-between border border-y-0 border-gray-200">
+						<div className="w-full md:w-2/5 flex items-end pl-4">
+							<h1 className="text-gray-900 font-neue font-medium text-5xl">
+								What is
+								<br />
+								<span className="text-violet-500 font-semibold">
+									<em>Gibwork</em>
+								</span>{" "}
+								?
+							</h1>
+						</div>
+						<div className="w-full md:w-3/5 flex justify-end items-end pr-4 pl-4 pt-4 md:pl-0 md:pt-0">
+							<p className="text-sm text-gray-500 max-w-3xl">
+								Gibwork is the ultimate platform for connecting talent with
+								opportunities in a decentralized, secure environment. Whether
+								you're posting or solving a bounty, our platform leverages
+								Solana's blockchain for seamless, transparent, and instant
+								transactions. A bounty is a paid task where creators set
+								specific requirements and rewards for completion. Join a global
+								community of skilled professionals and innovators, where ideas
+								come to life and talent is rewarded.
+							</p>
+						</div>
 					</div>
-					<div className="flex justify-end items-end pr-4 pl-4 pt-4 md:pl-0 md:pt-0">
-						<p className="text-sm text-gray-500 max-w-3xl">
-							Gibwork is the ultimate platform for connecting talent with
-							opportunities in a decentralized, secure environment. Whether
-							you're posting or solving a bounty, our platform leverages
-							Solana's blockchain for seamless, transparent, and instant
-							transactions. A bounty is a paid task where creators set specific
-							requirements and rewards for completion. Join a global community
-							of skilled professionals and innovators, where ideas come to life
-							and talent is rewarded.
-						</p>
-					</div>
-				</div>
+				</BlurFade>
 			</div>
 			<div className="border-b border-gray-200">
-				<div className="bg-gray-600  mx-auto w-[80%] border border-y-0 border-gray-200">
+				<div className="lg:bg-gray-600  mx-auto w-[80%] border-x border-gray-200">
 					<div className="mx-auto max-w-8xl text-gray-500">
 						<div className="relative">
 							<div className="relative z-10 grid  grid-cols-6">

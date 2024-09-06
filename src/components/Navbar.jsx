@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import "./Navbar.css";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { FaDiscord, FaGithub, FaXTwitter } from "react-icons/fa6";
 
 const menuLinks = [
 	{ path: "#", label: "Home" },
@@ -10,7 +9,7 @@ const menuLinks = [
 	{ path: "#testimonials", label: "Testimonials" },
 	{ path: "#team", label: "Team" },
 	{ path: "#FAQ", label: "FAQ" },
-	{ path: "https://app.gib.work/", label: "Sign In" },
+	{ path: "https://app.gib.work/", label: "App" },
 ];
 
 const Navbar = () => {
@@ -63,7 +62,6 @@ const Navbar = () => {
 			});
 
 		const navbar = document.querySelector(".menu-container");
-		const menuOverlay = document.querySelector(".menu-overlay");
 		listenScroll();
 
 		return () => {
@@ -97,11 +95,18 @@ const Navbar = () => {
 							)}
 						</div>
 						<div className="hidden md:flex justify-center items-center gap-2">
-							<Navlink path={menuLinks[menuLinks.length - 1].path}>
-								{menuLinks[menuLinks.length - 1].label}
-							</Navlink>
+							<div className="pr-2 border-r border-gray-700">
+								<Navlink path={menuLinks[menuLinks.length - 1].path}>
+									{menuLinks[menuLinks.length - 1].label}
+								</Navlink>
+							</div>
+
+							<w3m-button balance="hide" />
 						</div>
-						<div className="menu-open md:hidden" onClick={toggleMenu}>
+						<div
+							className="menu-open md:hidden flex justify-center items-center gap-3"
+							onClick={toggleMenu}
+						>
 							<p>Menu</p>
 						</div>
 					</div>
@@ -124,6 +129,9 @@ const Navbar = () => {
 					</div>
 					<div className="menu-copy">
 						<div className="menu-links">
+							<div>
+								<w3m-button balance="hide" />
+							</div>
 							{menuLinks.map((link, index) => (
 								<div className="menu-link-item" key={index}>
 									<div className="menu-link-item-holder" onClick={toggleMenu}>

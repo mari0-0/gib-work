@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import "./Team.css";
 import { FaDiscord, FaXTwitter } from "react-icons/fa6";
+import BlurFade from "./BlurFade";
 
 const teamMembersInfo = [
 	{
@@ -16,24 +17,6 @@ const teamMembersInfo = [
 	},
 	{
 		name: "0xNullRef 1",
-		twitter: "https://twitter.com/intent/follow?screen_name=0xNullRef",
-		twitterUsername: "0xNullRef",
-		discord: "https://discord.com/users/798963371511906334",
-		discordUsername: "Worker #117 @ Gib.Work",
-		image: "/0xNull_ref.jpg",
-		occupation: "Designer UI/UX",
-	},
-	{
-		name: "Nikhil Kumar 2",
-		twitter: "https://x.com/intent/follow?screen_name=nikhilkr_tw",
-		twitterUsername: "nikhilkr_tw",
-		discord: "https://discord.com/users/569966649889783810",
-		discordUsername: "NiCK#0998",
-		image: "/nikhil_kumar_o.jpg",
-		occupation: "Frontend Developer",
-	},
-	{
-		name: "0xNullRef 2",
 		twitter: "https://twitter.com/intent/follow?screen_name=0xNullRef",
 		twitterUsername: "0xNullRef",
 		discord: "https://discord.com/users/798963371511906334",
@@ -84,26 +67,29 @@ const Team = () => {
 				<div className="w-[80%] h-full mx-[10%] border-x border-gray-200"></div>
 			</div>
 
-			<section className="team-container w-full h-screen">
-				<div className="w-full border-b border-gray-200">
-					<div className="w-[80%] py-12 px-4 mx-auto border-x border-gray-200">
-						<h2 className="font-neue text-6xl text-gray-900 font-medium text-center">
-							Our <span className="font-semibold text-violet-600">Team</span>
-						</h2>
+			<section className="team-container w-full h-screen ">
+				<BlurFade yOffset={10} duration={0.6} delay={0.1}>
+					<div className="w-full border-b border-gray-200">
+						<div className="w-[80%] py-12 px-4 mx-auto border-x border-gray-200">
+							<h2 className="font-neue text-6xl text-gray-900 font-medium text-center">
+								Our <span className="font-semibold text-violet-600">Team</span>
+							</h2>
+						</div>
 					</div>
-				</div>
+				</BlurFade>
 				<div className="team-members-container w-full h-[80%] border-b border-gray-200">
 					<div className=" w-[80%] h-full mx-auto border-x border-gray-200">
 						{teamMembersInfo.map((member, i) => (
 							<div
-								className={`${i !== teamMembersInfo.length - 1 ? "team-member" : ""
-									} relative`}
+								className={`${
+									i !== teamMembersInfo.length - 1 ? "team-member" : ""
+								} relative`}
 							>
 								<div
 									className={`team-section absolute w-full h-[60vh] top-0 left-0 md:top-0 md:left-0 md:w-1/2 md:h-[80vh] flex justify-center items-center border-b md:border-b-0 md:border-r border-gray-200`}
 									style={{ zIndex: (teamMembersInfo.length - i - 1) * 10 + 10 }}
 								>
-									<div className="w-80 h-80 mx-auto rounded-full ">
+									<div className="w-52 h-52 md:w-80 md:h-80 mx-auto rounded-full ">
 										<img
 											src={member.image}
 											alt={member.name}
@@ -113,8 +99,11 @@ const Team = () => {
 								</div>
 
 								<div
-									className={`team-section absolute bg-white w-full h-[20vh] top-[60vh] right-0 md:top-0 md:right-0 md:w-1/2 md:h-[80vh] flex flex-row md:flex-col justify-center items-center md:items-start gap-3 md:gap-8 ${i === teamMembersInfo.length - 1 ? "border-b border-gray-200" : ""
-										}`}
+									className={`team-section absolute bg-white w-full h-[20vh] top-[60vh] right-0 md:top-0 md:right-0 md:w-1/2 md:h-[80vh] flex flex-row md:flex-col justify-center items-center md:items-start gap-3 md:gap-8 ${
+										i === teamMembersInfo.length - 1
+											? "border-b border-gray-200"
+											: ""
+									}`}
 									style={{ zIndex: (teamMembersInfo.length - i - 1) * 10 + 10 }}
 								>
 									<div className="w-full h-full md:px-[10%] flex flex-col justify-center items-center md:justify-end md:items-start border-r md:border-r-0 border-gray-200">
@@ -136,7 +125,9 @@ const Team = () => {
 											>
 												<FaXTwitter />
 											</a>
-											<h3 className="text-sm md:text-md">@{member.twitterUsername}</h3>
+											<h3 className="text-sm md:text-md">
+												@{member.twitterUsername}
+											</h3>
 										</div>
 
 										<div className="social-links flex justify-center items-center space-x-2">
@@ -148,7 +139,9 @@ const Team = () => {
 											>
 												<FaDiscord />
 											</a>
-											<h3 className="text-sm md:text-md">@{member.discordUsername}</h3>
+											<h3 className="text-sm md:text-md">
+												@{member.discordUsername}
+											</h3>
 										</div>
 									</div>
 								</div>
